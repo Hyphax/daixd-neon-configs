@@ -1,5 +1,5 @@
 
-import { ArrowRight, Send, Shield, Lock, Server, Globe, Zap } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 
 const Index = () => {
   const configs = [
@@ -28,22 +28,14 @@ const Index = () => {
     { name: "Jimmy John's", url: "https://www.jimmyjohns.com" },
   ];
 
-  const antiBot = [
-    { name: "Akamai Web/BMP", icon: Globe },
-    { name: "PerimeterX", icon: Shield },
-    { name: "Incapsula", icon: Lock },
-    { name: "Cloudflare", icon: Server },
-    { name: "Kasada", icon: Zap },
-  ];
-
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-black text-white">
       {/* Header Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center px-6 relative bg-black text-white">
+      <section className="min-h-screen flex flex-col justify-center items-center px-6 relative">
         <div className="text-center max-w-4xl mx-auto">
           {/* Trust Badge */}
           <div className="gradient-border mb-8 inline-block">
@@ -82,21 +74,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Available Websites Section */}
+      {/* Available Configs Section */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-            Available Websites
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            Available Configs
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
             {configs.map((config) => (
               <a
                 key={config.name}
                 href={config.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="config-pill bg-gray-900 text-white font-medium text-sm px-6 py-3 rounded-full text-center hover:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105"
+                className="config-item text-gray-300 font-medium text-lg hover:text-blue-400 transition-all duration-300 pl-6 py-2"
               >
                 {config.name}
               </a>
@@ -105,43 +97,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Anti-Bot Specialties Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-            Anti-Bot Specialties
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {antiBot.slice(0, 3).map((item) => (
-              <div
-                key={item.name}
-                className="anti-bot-card bg-gray-900 text-white p-8 rounded-2xl text-center hover:bg-gray-800 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-105 cursor-pointer"
-              >
-                <item.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
-                <h3 className="text-lg font-semibold">{item.name}</h3>
-              </div>
-            ))}
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {antiBot.slice(3).map((item) => (
-              <div
-                key={item.name}
-                className="anti-bot-card bg-gray-900 text-white p-8 rounded-2xl text-center hover:bg-gray-800 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-105 cursor-pointer"
-              >
-                <item.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
-                <h3 className="text-lg font-semibold">{item.name}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-900">
+      <section id="contact" className="py-20 px-6 bg-gray-900/30">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16">
             Contact
           </h2>
           
