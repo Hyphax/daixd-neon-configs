@@ -1,5 +1,5 @@
 
-import { ArrowRight, Telegram } from "lucide-react";
+import { ArrowRight, Send } from "lucide-react";
 
 const Index = () => {
   const configs = [
@@ -111,7 +111,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-8 py-4 rounded-full neon-glow neon-glow-hover transition-all duration-300 inline-flex items-center gap-3 min-w-[200px] justify-center"
             >
-              <Telegram className="w-5 h-5" />
+              <Send className="w-5 h-5" />
               @justdaixd
             </a>
             
@@ -121,7 +121,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="group bg-gradient-to-r from-purple-600 to-purple-700 text-white font-semibold px-8 py-4 rounded-full neon-glow neon-glow-hover transition-all duration-300 inline-flex items-center gap-3 min-w-[200px] justify-center"
             >
-              <Telegram className="w-5 h-5" />
+              <Send className="w-5 h-5" />
               @JustConfigs
             </a>
           </div>
