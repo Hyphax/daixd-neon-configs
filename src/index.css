@@ -122,6 +122,22 @@
     padding: 0.75rem 1.5rem;
   }
 
+  .config-pill {
+    @apply relative cursor-pointer transition-all duration-300;
+  }
+
+  .config-pill:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .anti-bot-card {
+    @apply relative cursor-pointer transition-all duration-300;
+  }
+
+  .anti-bot-card:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  }
+
   .config-item {
     @apply relative cursor-pointer transition-all duration-300 hover:text-blue-400;
   }
