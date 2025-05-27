@@ -1,4 +1,5 @@
-import { ArrowRight, Send, Shield, Globe, Lock, Zap, Server } from "lucide-react";
+
+import { ArrowRight, Send, Shield, Lock, Server, Globe, Zap } from "lucide-react";
 
 const Index = () => {
   const configs = [
@@ -28,19 +29,26 @@ const Index = () => {
   ];
 
   const antiBot = [
-    { name: "Akamai Web/BMP", icon: Shield },
-    { name: "PerimeterX", icon: Globe },
+    { name: "Akamai Web/BMP", icon: Globe },
+    { name: "PerimeterX", icon: Shield },
     { name: "Incapsula", icon: Lock },
-    { name: "Cloudflare", icon: Zap },
-    { name: "Kasada", icon: Server },
+    { name: "Cloudflare", icon: Server },
+    { name: "Kasada", icon: Zap },
   ];
 
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-black scroll-smooth">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 scroll-smooth">
       {/* Header Section */}
       <section className="min-h-screen flex flex-col justify-center items-center px-6 relative bg-black text-white">
         <div className="text-center max-w-4xl mx-auto">
@@ -84,7 +92,7 @@ const Index = () => {
       {/* Available Websites Section */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
             Available Websites
           </h2>
           
@@ -95,7 +103,7 @@ const Index = () => {
                 href={config.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-gray-900 text-white px-6 py-3 rounded-full text-center font-medium hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 hover:bg-gray-800"
+                className="config-pill bg-gray-900 text-white font-medium text-sm px-6 py-3 rounded-full text-center hover:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105"
               >
                 {config.name}
               </a>
@@ -105,48 +113,42 @@ const Index = () => {
       </section>
 
       {/* Anti-Bot Specialties Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-slate-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
             Anti-Bot Specialties
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-6">
-            {antiBot.slice(0, 3).map((item) => {
-              const IconComponent = item.icon;
-              return (
-                <div
-                  key={item.name}
-                  className="group bg-gray-900 rounded-lg p-8 text-center hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 cursor-pointer"
-                >
-                  <IconComponent className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                  <h3 className="text-white font-medium text-lg">{item.name}</h3>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {antiBot.slice(0, 3).map((item) => (
+              <div
+                key={item.name}
+                className="anti-bot-card bg-gray-900 text-white p-8 rounded-2xl text-center hover:bg-gray-800 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-105 cursor-pointer"
+              >
+                <item.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
+                <h3 className="text-lg font-semibold">{item.name}</h3>
+              </div>
+            ))}
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {antiBot.slice(3).map((item) => {
-              const IconComponent = item.icon;
-              return (
-                <div
-                  key={item.name}
-                  className="group bg-gray-900 rounded-lg p-8 text-center hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105 cursor-pointer"
-                >
-                  <IconComponent className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                  <h3 className="text-white font-medium text-lg">{item.name}</h3>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            {antiBot.slice(3).map((item) => (
+              <div
+                key={item.name}
+                className="anti-bot-card bg-gray-900 text-white p-8 rounded-2xl text-center hover:bg-gray-800 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-105 cursor-pointer"
+              >
+                <item.icon className="w-12 h-12 mx-auto mb-4 text-blue-400" />
+                <h3 className="text-lg font-semibold">{item.name}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-900/30">
+      <section id="contact" className="py-20 px-6 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white">
             Contact
           </h2>
           
